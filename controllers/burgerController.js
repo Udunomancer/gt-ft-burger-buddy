@@ -22,9 +22,9 @@ router.post("/api/burgers", function(req, res) {
     burger.create([
         "name", "consumed"
     ], [
-        req.body.name, false
+        req.body.name, req.body.consumed
     ], function(result) {
-        res.json({ id: result.insertID });
+        res.json({ id: result.insertId });
     });
 });
 

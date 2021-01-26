@@ -17,7 +17,7 @@ $(function() {
 
         let newBurger = {
             name: $("#burger").val().trim(),
-            consumed: false
+            consumed: 0
         };
 
         $.ajax("/api/burgers", {
