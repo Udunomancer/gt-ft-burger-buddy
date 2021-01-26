@@ -22,3 +22,4 @@ var burger = {
 };
 
 // ===Export burger database functions===
+module.exports = burger;
