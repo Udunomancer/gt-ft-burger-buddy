@@ -6,7 +6,7 @@ const connection = mysql.createConnection({
     host: "localhost",
     port: 3306,
     user: "root",
-    password: "password",
+    password: "V!sionfor20202",
     database: "burger_db"
 });
 
@@ -16,7 +16,7 @@ connection.connect(function(err) {
         console.error("Error connecting: " + err.stack);
         return;
     }
-    console.log("Connected as id: " + connection.threadID);
+    console.log("Connected as id: " + connection.threadId);
 });
 
 // ===Export mysql connection===
