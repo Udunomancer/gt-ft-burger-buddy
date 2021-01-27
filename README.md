@@ -11,7 +11,7 @@ Deployed Site: [https://serene-lowlands-21111.herokuapp.com/](https://serene-low
 ![Image](public/assets/images/burger-buddy-screenshot.png)
 
 ## Table of Contents
-* [Installation])(#installation)
+* [Installation](#installation)
 * [Usage](#usage)
 * [License](#license)
 * [Contributing](#contributing)
