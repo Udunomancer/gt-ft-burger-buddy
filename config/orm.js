@@ -3,91 +3,93 @@ const connection = require("../config/connection.js");
 
 // ===SQL Syntax Helper Functions===
 function printQuestionMarks(num) {
-    // Function to return a string of comma separated "?"s
-    // Input: (Int) Number
-    // Output: (String) of comma separated "?"s matching input num
+  // Function to return a string of comma separated "?"s
+  // Input: (Int) Number
+  // Output: (String) of comma separated "?"s matching input num
 
-    let arr = [];
+  let arr = [];
 
-    for (var i = 0; i < num; i++) {
-        arr.push("?");
-    }
+  for (var i = 0; i < num; i++) {
+    arr.push("?");
+  }
 
-    return arr.toString();
+  return arr.toString();
 }
 
 function objToSql(ob) {
-    // Function to convert object key/value pairs to SQL syntax
-    // Input: (Object) with keys and values
-    // Output: (String) single comma separated string
+  // Function to convert object key/value pairs to SQL syntax
+  // Input: (Object) with keys and values
+  // Output: (String) single comma separated string
 
-    let arr = [];
+  let arr = [];
 
-    for(var key in ob) {
-        let value = ob[key];
+  for (var key in ob) {
+    let value = ob[key];
 
-        if(Object.hasOwnProperty.call(ob, key)) {
-            if (typeof value === "string" && value.indexOf(" ") >= 0) {
-                value = "'" + value + "'";
-            }
+    if (Object.hasOwnProperty.call(ob, key)) {
+      if (typeof value === "string" && value.indexOf(" ") >= 0) {
+        value = "'" + value + "'";
+      }
 
-            arr.push(key + "=" + value);
-        }
+      arr.push(key + "=" + value);
     }
+  }
 
-    return arr.toString();
+  return arr.toString();
 }
 
-
 const orm = {
-    all: function(tableInput, cb) {
-        let queryString = "SELECT * FROM " + tableInput + ";";
-        connection.query(queryString, function(err, result) {
-            if(err) {
-                throw err;
-            }
-            cb(result);
-        });
-    },
+  //ORM Function for GET ALL items
+  all: function (tableInput, cb) {
+    let queryString = "SELECT * FROM " + tableInput + ";";
+    connection.query(queryString, function (err, result) {
+      if (err) {
+        throw err;
+      }
+      cb(result);
+    });
+  },
 
-    create: function(table, cols, vals, cb) {
-        let queryString = "INSERT INTO " + table;
+  //ORM Function to CREATE a NEW item
+  create: function (table, cols, vals, cb) {
+    let queryString = "INSERT INTO " + table;
 
-        queryString += " (";
-        queryString += cols.toString();
-        queryString += ") ";
-        queryString += "VALUES (";
-        queryString += printQuestionMarks(vals.length);
-        queryString += ") ";
+    queryString += " (";
+    queryString += cols.toString();
+    queryString += ") ";
+    queryString += "VALUES (";
+    queryString += printQuestionMarks(vals.length);
+    queryString += ") ";
 
-        console.log(queryString);
+    console.log(queryString);
 
-        connection.query(queryString, vals, function(err, result) {
-            if (err) {
-                throw err;
-            }
+    connection.query(queryString, vals, function (err, result) {
+      if (err) {
+        throw err;
+      }
 
-            cb(result);
-        });
-    },
+      cb(result);
+    });
+  },
 
-    update: function(table, objColVals, condition, cb) {
-        let queryString = "UPDATE " + table;
+  //ORM Function to UPDATE an EXISTING item
+  update: function (table, objColVals, condition, cb) {
+    let queryString = "UPDATE " + table;
 
-        queryString += " SET ";
-        queryString += objToSql(objColVals);
-        queryString += " WHERE ";
-        queryString += condition;
+    queryString += " SET ";
+    queryString += objToSql(objColVals);
+    queryString += " WHERE ";
+    queryString += condition;
 
-        console.log(queryString);
-        connection.query(queryString, function(err, result) {
-            if(err) {
-                throw err;
-            }
+    console.log(queryString);
+    connection.query(queryString, function (err, result) {
+      if (err) {
+        throw err;
+      }
 
-            cb(result);
-        });
-    }
+      cb(result);
+    });
+  },
 };
 
 // ===Export ORM object===

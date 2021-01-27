@@ -24,7 +24,6 @@ app.set("view engine", "handlebars");
 app.use(routes);
 
 // ===Start server to listen for requests===
-app.listen(PORT, function() {
-    console.log("Server listeninrg on PORT: " + PORT);
+app.listen(PORT, function () {
+  console.log("Server listeninrg on PORT: " + PORT);
 });
-

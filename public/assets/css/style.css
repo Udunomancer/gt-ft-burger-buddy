@@ -1,40 +1,46 @@
-body, .card {
-    background-color: #f2c79b;
+/* Background color styling */
+body,
+.card {
+  background-color: #f2c79b;
 }
 
-.card-header, .card-footer {
-    background-color: #AB7A49
+/* Coloring for items in the "burger" cards */
+.card-header,
+.card-footer {
+  background-color: #ab7a49;
 }
 
-.topping-1, .topping-0 {
-    color: #f8f9fa;
-    border-color: #8c3e3e !important;
-    background-color: #450101;
+.topping-1,
+.topping-0 {
+  color: #f8f9fa;
+  border-color: #8c3e3e !important;
+  background-color: #450101;
 }
 
 .topping-2 {
-    color: #f8f9fa;
-    border-color: #96f279 !important;
-    background-color: #32c704;
+  color: #f8f9fa;
+  border-color: #96f279 !important;
+  background-color: #32c704;
 }
 
 .topping-3 {
-    color: #f8f9fa;
-    border-color: #f28c80 !important;
-    background-color: #ec3521;
+  color: #f8f9fa;
+  border-color: #f28c80 !important;
+  background-color: #ec3521;
 }
 
+/* Coloring for middle form items */
 .devour {
-    color: #f8f9fa;
+  color: #f8f9fa;
 }
 
 .form-group {
-    background-color: #450101;
-    color: #f8f9fa;
+  background-color: #450101;
+  color: #f8f9fa;
 }
 
 #burger {
-    background-color: #8c3e3e;
-    color: #f8f9fa;
-    border: none;
+  background-color: #8c3e3e;
+  color: #f8f9fa;
+  border: none;
 }
