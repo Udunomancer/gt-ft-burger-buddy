@@ -9,6 +9,7 @@ const burger = require("../models/burger.js");
 // ---Route: Get all Burgers---
 router.get("/", function(req, res) {
     burger.all(function(data) {
+        data.map(obj => obj.topping = obj.id % 4)
         const hbsObject = {
             burgers: data
         };

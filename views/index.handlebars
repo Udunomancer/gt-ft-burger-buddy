@@ -1,37 +1,65 @@
-<h1>BURGERS</h1>
+<nav class="navbar navbar-dark bg-dark mb-3">
+  <div class="container justify-content-center">
+      <span class="navbar-brand mb-0 h1">BURGERS</span>
+  </div>
+</nav>
 <div class="container">
     <div class="row">
-        <div class="col-4">
-            <div class="card">
-            <h4 class="card-title">Unconsumed Burgers</h4>
-            <ul class="list-group list-group-flush">
-                {{#each burgers}}
-                {{#unless consumed}}
-                {{> burgers/burger-block}}
-                {{/unless}}
-                {{/each}}
-            </ul>
+        <div class="col-lg-4 my-3">
+            <div class="card text-center">
+                <div class="card-header">
+                    <h4 class="card-title">Unconsumed Burgers</h4>
+                </div>
+                <div class="card-body p-0">
+                    <ul class="list-group list-group-flush">
+                        {{#each burgers}}
+                        {{#unless consumed}}
+                        {{> burgers/burger-block}}
+                        {{/unless}}
+                        {{/each}}
+                    </ul>
+                </div>
+                <div class="card-footer">
+                    Click "Devour" next to a burger to eat it.
+                </div>
             </div>
         </div>
-        <div class="col-4">
-            <h2>Add a Burger</h2>
-            <form class="create-form">
-                <div class="form-group">
-                    <label for="burger">Burger Name:</label>
-                    <input type="text" id="burger" name="name">
+        <div class="col-lg-4 my-3">
+            <div class="card text-center">
+                <div class="card-header">
+                    <h4 class="card-title">Add a Burger</h4>
                 </div>
-                <button type="submit">Add Burger</button>
-            </form>
+                <form class="create-form">
+                    <div class="card-body p-0">
+                        <div class="form-group rounded p-3">
+                            <label for="burger">Burger Name:  </label>
+                            <input type="text" class="rounded" id="burger" name="name">
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn border-dark shadow-lg" type="submit">Add Burger</button>
+                    </div>
+                </form>
+            </div>
         </div>
-        <div class="col-4">
-            <h2>Consumed Burgers</h2>
-            <ul>
-                {{#each burgers}}
-                {{#if consumed}}
-                {{> burgers/burger-block}}
-                {{/if}}
-                {{/each}}
-            </ul>
+        <div class="col-lg-4 my-3">
+            <div class="card text-center">
+                <div class="card-header">
+                    <h4 class="card-title">Consumed Burgers</h4>
+                </div>
+                <div class="card-body p-0">
+                    <ul class="list-group list-group-flush">
+                        {{#each burgers}}
+                        {{#if consumed}}
+                        {{> burgers/burger-block}}
+                        {{/if}}
+                        {{/each}}
+                    </ul>
+                </div>
+                <div class="card-footer">
+                    All burgers you have consumed are listed here
+                </div>
+            </div>
         </div>
     </div>
 </div>

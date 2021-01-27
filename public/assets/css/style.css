@@ -1,19 +1,40 @@
-li {
-    padding: 5px;
-    margin: 5px;
-    background: #faebd7;
+body, .card {
+    background-color: #f2c79b;
 }
 
-.label {
-    font-weight: bold;
+.card-header, .card-footer {
+    background-color: #AB7A49
 }
 
-.create-update-form {
-    padding: 5px;
-    margin: 5px;
-    background: aqua;
+.topping-1, .topping-0 {
+    color: #f8f9fa;
+    border-color: #8c3e3e !important;
+    background-color: #450101;
+}
+
+.topping-2 {
+    color: #f8f9fa;
+    border-color: #96f279 !important;
+    background-color: #32c704;
+}
+
+.topping-3 {
+    color: #f8f9fa;
+    border-color: #f28c80 !important;
+    background-color: #ec3521;
+}
+
+.devour {
+    color: #f8f9fa;
 }
 
 .form-group {
-    margin-bottom: 5px;
+    background-color: #450101;
+    color: #f8f9fa;
+}
+
+#burger {
+    background-color: #8c3e3e;
+    color: #f8f9fa;
+    border: none;
 }

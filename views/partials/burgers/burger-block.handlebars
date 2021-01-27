@@ -1,7 +1,7 @@
-<li class="list-group-item">
+<li class="list-group-item rounded border-top topping-{{topping}}">
     {{ name }}
     {{#unless consumed}}
-        <button class="devour" data-id="{{id}}">
+        <button class="btn border-light devour" data-id="{{id}}">
             DEVOUR
         </button>
     {{/unless}}
